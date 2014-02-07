@@ -16,3 +16,11 @@
 /config/database.yml
 /tmp
 /.idea
+
+# VIM swap files
+*.swp
+*.swo
+*.swq
+
+# git swap files
+*.un~

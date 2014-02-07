@@ -43,6 +43,8 @@ gem "kaminari", "~> 0.14.1" # pagination
 gem 'workflow', git: 'https://github.com/geekq/workflow'
 
 gem 'jquery-turbolinks'
+gem 'execjs'
+gem 'therubyracer'
 
 
 group :development do
@@ -59,16 +61,19 @@ group :development do
   gem 'pry'
   gem 'thin'
 end
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
 end
+
 group :production do
   gem 'rails_12factor'
   gem "passenger", '>= 4.0.18' # for heroku
   gem 'rollbar' # monitoring
   gem 'newrelic_rpm' # monitoring
 end
+
 group :test do
   gem 'capybara'
   gem 'poltergeist'
