@@ -26,3 +26,28 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+== prepare local project
+
+* > bundle
+
+* copy file config/database.example.yml as config/database.yml
+
+* open pg console and execute these commands
+
+> create role contest4good with createdb login password 'contest4good';
+
+Make existed role a superuser
+> ALTER USER contest4good WITH SUPERUSER;
+
+Change password
+> ALTER USER contest4good WITH password 'contest4good';
+
+Grant user to create db
+> alter user contest4good CREATEDB;
+
+Check user and properties
+> select * from pg_user;
+
+go out from console
+> \q
