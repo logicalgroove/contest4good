@@ -31,7 +31,7 @@ gem 'json'
 #gem 'paperclip'
 gem 'protected_attributes'
 #gem 'slim-rails'
-gem 'haml-rails'
+gem 'haml'
 
 gem 'jquery-ui-rails'
 gem 'jquery-rails'
@@ -47,6 +47,7 @@ gem 'jquery-turbolinks'
 
 
 group :development do
+  gem 'haml-rails'
   gem 'better_errors'
   gem 'binding_of_caller', :platforms => [:mri_19, :mri_20, :rbx]
   gem 'guard', "~> 2.0.3"
@@ -59,11 +60,6 @@ group :development do
   gem 'rb-inotify', :require => false
   gem 'pry'
   gem 'thin'
-
-  # for headless linux only
-  gem 'execjs'
-  gem 'therubyracer'
-  # end
 end
 
 group :development, :test do
