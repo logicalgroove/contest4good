@@ -1,0 +1,29 @@
+development:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: contest4good_development
+  pool:     5
+  username: contest4good
+  password: contest4good
+  template: template0
+
+test:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: contest4good_test
+  pool:     5
+  username: contest4good
+  password: contest4good
+  template: template0
+
+production:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: contest4good_production
+  pool:     5
+  username: contest4good
+  password: contest4good
+  template: template0
