@@ -44,8 +44,6 @@ gem "kaminari", "~> 0.14.1" # pagination
 gem 'workflow', git: 'https://github.com/geekq/workflow'
 
 gem 'jquery-turbolinks'
-gem 'execjs'
-gem 'therubyracer'
 
 
 group :development do
@@ -61,6 +59,11 @@ group :development do
   gem 'rb-inotify', :require => false
   gem 'pry'
   gem 'thin'
+
+  # for headless linux only
+  gem 'execjs'
+  gem 'therubyracer'
+  # end
 end
 
 group :development, :test do
