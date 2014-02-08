@@ -3,7 +3,7 @@ Contest4good::Application.routes.draw do
   namespace :teachers do
     resources :events
     resources :students
-    resources :subjects
+    resources :subjects, except: [:show]
     resources :teachers
     get "/", to: "teachers#home", as: :home, via: :get
   end

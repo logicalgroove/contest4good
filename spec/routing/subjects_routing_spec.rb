@@ -1,34 +1,34 @@
 require "spec_helper"
 
-describe SubjectsController do
+describe Teachers::SubjectsController do
   describe "routing" do
 
     it "routes to #index" do
-      get("/subjects").should route_to("subjects#index")
+      get("/teachers/subjects").should route_to("teachers/subjects#index")
     end
 
     it "routes to #new" do
-      get("/subjects/new").should route_to("subjects#new")
+      get("/teachers/subjects/new").should route_to("teachers/subjects#new")
     end
 
     it "routes to #show" do
-      get("/subjects/1").should route_to("subjects#show", :id => "1")
+      get("/teachers/subjects/1").should route_to("teachers/subjects#show", :id => "1")
     end
 
     it "routes to #edit" do
-      get("/subjects/1/edit").should route_to("subjects#edit", :id => "1")
+      get("/teachers/subjects/1/edit").should route_to("teachers/subjects#edit", :id => "1")
     end
 
     it "routes to #create" do
-      post("/subjects").should route_to("subjects#create")
+      post("/teachers/subjects").should route_to("teachers/subjects#create")
     end
 
     it "routes to #update" do
-      put("/subjects/1").should route_to("subjects#update", :id => "1")
+      put("/teachers/subjects/1").should route_to("teachers/subjects#update", :id => "1")
     end
 
     it "routes to #destroy" do
-      delete("/subjects/1").should route_to("subjects#destroy", :id => "1")
+      delete("/teachers/subjects/1").should route_to("teachers/subjects#destroy", :id => "1")
     end
 
   end

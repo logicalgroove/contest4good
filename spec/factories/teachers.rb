@@ -10,6 +10,6 @@ FactoryGirl.define do
     email
     password 'changeme'
     password_confirmation 'changeme'
-    confirmed_at Time.now
+    #confirmed_at Time.now
   end
 end

@@ -28,7 +28,7 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 RSpec.configure do |config|
   config.include FactoryGirl, :type => :feature
   config.include Warden::Test::Helpers, :type => :feature
-  #config.include ValidatePage, :type => :feature
+  config.include ValidatePage, :type => :feature
   config.include(EmailSpec::Helpers)
   config.include(EmailSpec::Matchers)
   config.extend ControllerMacros, :type => :controller

@@ -18,9 +18,9 @@ require 'spec_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-describe SubjectsController do
+describe Teachers::SubjectsController do
 
-  #login_teacher
+  login_teacher
   # This should return the minimal set of attributes required to create a valid
   # Subject. As you add validations to Subject, be sure to
   # adjust the attributes here as well.
@@ -42,8 +42,7 @@ describe SubjectsController do
   describe "GET show" do
     it "assigns the requested subject as @subject" do
       subject = Subject.create! valid_attributes
-      get :show, {:id => subject.to_param}, valid_session
-      assigns(:subject).should eq(subject)
+      expect{get :show, {:id => subject.to_param}, valid_session}.to raise_error(ActionController::UrlGenerationError)
     end
   end
 
@@ -78,7 +77,7 @@ describe SubjectsController do
 
       it "redirects to the created subject" do
         post :create, {:subject => valid_attributes}, valid_session
-        response.should redirect_to(Subject.last)
+        response.should redirect_to(teachers_subjects_path)
       end
     end
 
@@ -120,7 +119,7 @@ describe SubjectsController do
       it "redirects to the subject" do
         subject = Subject.create! valid_attributes
         put :update, {:id => subject.to_param, :subject => valid_attributes}, valid_session
-        response.should redirect_to(subject)
+        response.should redirect_to(teachers_subjects_path)
       end
     end
 
@@ -154,7 +153,7 @@ describe SubjectsController do
     it "redirects to the subjects list" do
       subject = Subject.create! valid_attributes
       delete :destroy, {:id => subject.to_param}, valid_session
-      response.should redirect_to(subjects_url)
+      response.should redirect_to(teachers_subjects_url)
     end
   end
 

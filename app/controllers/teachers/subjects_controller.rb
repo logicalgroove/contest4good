@@ -7,11 +7,6 @@ class Teachers::SubjectsController < TeacherController
     @subjects = Subject.all
   end
 
-  # GET /subjects/1
-  # GET /subjects/1.json
-  def show
-  end
-
   # GET /subjects/new
   def new
     @subject = Subject.new
@@ -28,7 +23,7 @@ class Teachers::SubjectsController < TeacherController
 
     respond_to do |format|
       if @subject.save
-        format.html { redirect_to @subject, notice: 'Subject was successfully created.' }
+        format.html { redirect_to teachers_subjects_path, notice: 'Subject was successfully created.' }
         format.json { render action: 'show', status: :created, location: @subject }
       else
         format.html { render action: 'new' }
@@ -42,7 +37,7 @@ class Teachers::SubjectsController < TeacherController
   def update
     respond_to do |format|
       if @subject.update(subject_params)
-        format.html { redirect_to @subject, notice: 'Subject was successfully updated.' }
+        format.html { redirect_to teachers_subjects_path, notice: 'Subject was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -56,7 +51,7 @@ class Teachers::SubjectsController < TeacherController
   def destroy
     @subject.destroy
     respond_to do |format|
-      format.html { redirect_to subjects_url }
+      format.html { redirect_to teachers_subjects_url }
       format.json { head :no_content }
     end
   end
