@@ -31,7 +31,6 @@ gem 'json'
 #gem 'paperclip'
 gem 'protected_attributes'
 gem 'slim-rails'
-#gem 'haml'
 
 gem 'jquery-ui-rails'
 gem 'jquery-rails'
