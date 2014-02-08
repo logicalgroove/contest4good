@@ -1,4 +1,4 @@
-class StudentsController < ApplicationController
+class Students::StudentsController < StudentController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
   before_action :correct_password, only: [:update]
   before_action :gen_password, only: [:create]
@@ -11,6 +11,10 @@ class StudentsController < ApplicationController
 
   def new
     @student = Student.new
+  end
+
+  def home
+
   end
 
   def show
@@ -34,7 +38,7 @@ class StudentsController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_student
-    @student = Student.find(params[:id])
+    @student = Student.find(params[:id] || current_student.to_res)
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

@@ -20,6 +20,7 @@ require 'spec_helper'
 
 describe SubjectsController do
 
+  #login_teacher
   # This should return the minimal set of attributes required to create a valid
   # Subject. As you add validations to Subject, be sure to
   # adjust the attributes here as well.

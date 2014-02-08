@@ -1,4 +1,4 @@
-class SubjectsController < ApplicationController
+class Students::SubjectsController < StudentController
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
 
   # GET /subjects

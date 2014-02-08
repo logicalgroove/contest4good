@@ -1,4 +1,4 @@
-class EventsController < ApplicationController
+class Students::EventsController < StudentController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   # GET /events

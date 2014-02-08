@@ -1,4 +1,4 @@
-class StudentsController < ApplicationController
+class Teachers::StudentsController < TeacherController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
   before_action :correct_password, only: [:update]
   before_action :gen_password, only: [:create]

@@ -10,15 +10,15 @@ def create_default_users
 
   puts 'DEFAULT TEACHER'
   teacher = Teacher.where(email: 'teacher@example.com').first_or_create name: 'teacher',
-                                                               email: 'teacher@example.com', password: '12341234',
-                                                               password_confirmation: '12341234',
-                                                               confirmed_at: Time.now
+                                                                        email: 'teacher@example.com', password: '12341234',
+                                                                        password_confirmation: '12341234',
+                                                                        confirmed_at: Time.now
   teacher.accept_invitation!
-  
+
   student = Student.where(email: 'student@example.com').first_or_create name: 'student',
-                                                               email: 'student@example.com', password: '12341234',
-                                                               password_confirmation: '12341234',
-                                                               confirmed_at: Time.now
+                                                                        email: 'student@example.com', password: '12341234',
+                                                                        password_confirmation: '12341234',
+                                                                        confirmed_at: Time.now
 
 
 end
