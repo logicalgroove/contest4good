@@ -6,7 +6,6 @@ class Students::StudentsController < StudentController
   load_and_authorize_resource
 
   def index
-    @students = Student.all
   end
 
   def new

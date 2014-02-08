@@ -4,13 +4,15 @@ Contest4good::Application.routes.draw do
     resources :events
     resources :students
     resources :subjects
+    resources :teachers
+    get "/", to: "teachers#home", as: :home, via: :get
   end
 
   namespace :students do
     resources :events
     resources :students
     resources :subjects
-    get "/", to: "students#home"
+    get "/", to: "students#home", as: :home, via: :get
   end
 
 
@@ -20,9 +22,8 @@ Contest4good::Application.routes.draw do
   #devise_for :students, :controllers => {:registrations => "registrations", :invitations => "invitations"}, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
   #devise_for :teachers, :controllers => {:registrations => "admin/registrations", :invitations => "admin/invitations"}, :path => '', :path_names => {:sign_in => 'admin/login', :sign_out => 'admin/logout'}
 
-  devise_for :students #, :controllers => {:registrations => "registrations", :invitations => "invitations"}, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
-
-  devise_for :teachers #, :controllers => {:registrations => "admin/registrations", :invitations => "admin/invitations"}, :path => '', :path_names => {:sign_in => 'admin/login', :sign_out => 'admin/logout'}
+  devise_for :teachers#, :controllers => {:registrations => "registrations", :invitations => "admin/invitations"}, :path => '', :path_names => {:sign_in => 'admin/login', :sign_out => 'admin/logout'}
+  devise_for :students#, :controllers => {:registrations => "registrations", :invitations => "invitations"}, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
 
 
   #devise_scope :teacher do
