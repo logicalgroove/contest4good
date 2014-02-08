@@ -110,7 +110,7 @@ end
 
 # Filling out and interacting with forms
 Given /^I fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
-  fill_in(field, :with => value)
+  fill_in(field, :with => value, :match => :prefer_exact)
 end
 
 Given /^I fill in "([^"]*)" with "([^"]*)" within '(.*?)'$/ do |field, value, element|
