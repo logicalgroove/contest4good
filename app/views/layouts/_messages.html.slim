@@ -1,0 +1,7 @@
+- flash.each do |name, msg|
+  - if msg.is_a?(String)
+    .alert.alert-block*{:class => "alert-#{name == :notice ? 'success' : 'danger'}"}
+      button.close data-dismiss="alert" type="button"
+        i.glyphicon.glyphicon-remove
+      i.glyphicon.glyphicon-ok
+      = content_tag :span, msg, :id => "flash_#{name}"

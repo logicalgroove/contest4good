@@ -30,8 +30,8 @@ gem 'json'
 #gem 'font-awesome-rails'
 #gem 'paperclip'
 gem 'protected_attributes'
-#gem 'slim-rails'
-gem 'haml'
+gem 'slim-rails'
+#gem 'haml'
 
 gem 'jquery-ui-rails'
 gem 'jquery-rails'
@@ -47,7 +47,7 @@ gem 'jquery-turbolinks'
 
 
 group :development do
-  gem 'haml-rails'
+  #gem 'haml-rails'
   gem 'better_errors'
   gem 'binding_of_caller', :platforms => [:mri_19, :mri_20, :rbx]
   gem 'guard', "~> 2.0.3"

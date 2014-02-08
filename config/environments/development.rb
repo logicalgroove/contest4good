@@ -26,4 +26,22 @@ Contest4good::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  config.assets.debug = true  # Send email in development mode.
+
+  config.action_mailer.perform_deliveries = true
+
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :user_name => 'contest4good-8b12e93b9a7835af',
+      :password => 'b58677974d26e185',
+      :address => 'mailtrap.io',
+      :port => '2525',
+      :authentication => :plain
+  }
+
+  ENV['SYSTEM_EMAIL'] ||= 'sseletskyy@gmail.no'
+
 end

@@ -1,3 +1,22 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.panel-body h3 {
+  margin: 10px 0 15px;
+  padding: 0 0 15px 0;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.panel-body h3 .badge {
+  font-size: .7em;
+}
+
+table.table td .label {
+  font-size: 110% !important;
+  margin: 10px 5px 5px 0px;
+}
+
+li.logout {
+  padding-left: 20px;
+}
+
+span.label a:hover{
+  color: transparent;
+}

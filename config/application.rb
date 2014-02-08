@@ -15,8 +15,14 @@ module Contest4good
 
     config.active_record.schema_format = :ruby
 
+    config.to_prepare do
+      Devise::SessionsController.layout proc { |controller| action_name == 'new' ? "login" : "application" }
+    end
+
     config.assets.paths << Rails.root.join('vendor','assets','fonts')
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
 
   end
+
+
 end

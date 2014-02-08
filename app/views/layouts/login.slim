@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    meta  content="width=device-width, initial-scale=1.0" name="viewport" charset="utf-8"
+    title= content_for?(:title) ? yield(:title) : app_title
+    meta*{:content => content_for?(:description) ? yield(:description) : app_title, :name => 'description' }
+      = stylesheet_link_tag 'application', :media => 'all'
+      = csrf_meta_tags
+      = yield(:head)
+    link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet"
+  body.login-layout
+    = render 'layouts/messages'
+    .container
+      .row
+        .col-sm-6.col-sm-offset-3
+          .login-container
+            .text-center
+              h1
+                /i.glyphicon.glyphicon-road
+                span.white= app_title
+                /span.red Aid
+          = yield
+      .row
+        .col-sm-6.col-sm-offset-3
+          p
+            small &copy; #{app_title}
