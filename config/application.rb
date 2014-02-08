@@ -15,8 +15,8 @@ module Contest4good
 
     config.active_record.schema_format = :ruby
 
-    #config.assets.paths << Rails.root.join('vendor','assets','fonts')
-    #config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
+    config.assets.paths << Rails.root.join('vendor','assets','fonts')
+    config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
 
   end
 end
