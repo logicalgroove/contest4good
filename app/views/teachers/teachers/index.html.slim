@@ -1,0 +1,19 @@
+h3 Teachers
+.span8
+  table#teachers_table_long.table.table-bordered.table-striped
+    thead
+      tr
+        th Name
+        th Email
+        th Created at
+        th
+    tbody
+      - @teachers.each do |teacher|
+        tr
+          td= link_to teacher.name, edit_teachers_teacher_path(teacher)
+          td= teacher.email
+          td= teacher.created_at
+          td= link_to('Edit', edit_teachers_teacher_path(teacher), :class => 'btn btn-info')
+
+
+= link_to 'Add teacher', new_teachers_teacher_path, class: 'btn btn-default'

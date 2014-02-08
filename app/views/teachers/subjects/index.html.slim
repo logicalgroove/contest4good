@@ -1,0 +1,17 @@
+h3 Subjects
+.span8
+  table#subjects_table_long.table.table-bordered.table-striped
+    thead
+      tr
+        th Name
+        th Created at
+        th
+    tbody
+      - @subjects.each do |subject|
+        tr
+          td= link_to subject.name, edit_teachers_subject_path(subject)
+          td= subject.created_at
+          td= link_to('Edit', edit_teachers_subject_path(subject), :class => 'btn btn-info')
+
+
+= link_to 'Add subject', new_teachers_subject_path, class: 'btn btn-default'
