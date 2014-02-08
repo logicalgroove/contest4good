@@ -1,7 +1,7 @@
 Contest4good::Application.routes.draw do
 
   namespace :teachers do
-    resources :events
+    resources :events, except: [:show]
     resources :students
     resources :subjects, except: [:show]
     resources :teachers

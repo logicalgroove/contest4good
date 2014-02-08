@@ -11,10 +11,6 @@ describe Teachers::EventsController do
       get("/teachers/events/new").should route_to("teachers/events#new")
     end
 
-    it "routes to #show" do
-      get("/teachers/events/1").should route_to("teachers/events#show", :id => "1")
-    end
-
     it "routes to #edit" do
       get("/teachers/events/1/edit").should route_to("teachers/events#edit", :id => "1")
     end

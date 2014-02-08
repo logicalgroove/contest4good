@@ -7,11 +7,6 @@ class Teachers::EventsController < TeacherController
     @events = Event.all
   end
 
-  # GET /events/1
-  # GET /events/1.json
-  def show
-  end
-
   # GET /events/new
   def new
     @event = Event.new
@@ -28,7 +23,7 @@ class Teachers::EventsController < TeacherController
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to teachers_events_path, notice: 'Event was successfully created.' }
         format.json { render action: 'show', status: :created, location: @event }
       else
         format.html { render action: 'new' }
@@ -42,7 +37,7 @@ class Teachers::EventsController < TeacherController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
+        format.html { redirect_to teachers_events_path, notice: 'Event was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -56,7 +51,7 @@ class Teachers::EventsController < TeacherController
   def destroy
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to events_url }
+      format.html { redirect_to teachers_events_path }
       format.json { head :no_content }
     end
   end

@@ -43,8 +43,7 @@ describe Teachers::EventsController do
   describe "GET show" do
     it "assigns the requested event as @event" do
       event = Event.create! valid_attributes
-      get :show, {:id => event.to_param}, valid_session
-      assigns(:event).should eq(event)
+      expect{get :show, {:id => event.to_param}, valid_session}.to raise_error(ActionController::UrlGenerationError)
     end
   end
 
@@ -79,7 +78,7 @@ describe Teachers::EventsController do
 
       it "redirects to the created event" do
         post :create, {:event => valid_attributes}, valid_session
-        response.should redirect_to(Event.last)
+        response.should redirect_to(teachers_events_path)
       end
     end
 
@@ -121,7 +120,7 @@ describe Teachers::EventsController do
       it "redirects to the event" do
         event = Event.create! valid_attributes
         put :update, {:id => event.to_param, :event => valid_attributes}, valid_session
-        response.should redirect_to(event)
+        response.should redirect_to(teachers_events_path)
       end
     end
 
@@ -155,7 +154,7 @@ describe Teachers::EventsController do
     it "redirects to the events list" do
       event = Event.create! valid_attributes
       delete :destroy, {:id => event.to_param}, valid_session
-      response.should redirect_to(events_url)
+      response.should redirect_to(teachers_events_path)
     end
   end
 

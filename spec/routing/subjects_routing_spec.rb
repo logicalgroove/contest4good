@@ -11,10 +11,6 @@ describe Teachers::SubjectsController do
       get("/teachers/subjects/new").should route_to("teachers/subjects#new")
     end
 
-    it "routes to #show" do
-      get("/teachers/subjects/1").should route_to("teachers/subjects#show", :id => "1")
-    end
-
     it "routes to #edit" do
       get("/teachers/subjects/1/edit").should route_to("teachers/subjects#edit", :id => "1")
     end
